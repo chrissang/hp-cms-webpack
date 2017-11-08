@@ -1,9 +1,9 @@
 <template>
     <div class="row">
         <div class="small-12 columns">
-            <button v-on:click="createNewHomePage()">Create New Home Page</button>
-            <button v-on:click="loadHomePage()">Load Home Page</button>
-            <button>Preview Home Page</button>
+            <button v-on:click="createNewHomePage">Create New Home Page</button>
+            <button v-on:click="loadHomePage">Load Home Page</button>
+            <button v-on:click="previewHp">Preview Home Page</button>
         </div>
         <div class="small-12 medium-6 columns">
             <select v-model="selectedModule">
@@ -108,39 +108,45 @@ export default {
         createNewHomePage() {
             window.location.reload();
         },
-        cleanImagePath(image) {
-            if (image === null) {
-                return '';
-            } else {
-                image = image.replace(/https:\/\/www.uncommongoods.com/g, "").replace(/\s+/g,"").replace(/é/g, "e").trim();
-                if (image != '') {
-                    return '/images/hp/B'+image;
-                } else {
-                    return '';
-                }
-            }
+        previewHp() {
+            this.$router.push({
+                path: '/preview',
+                query: { payload: JSON.stringify(this.hpJson)}
+            });
         },
-        cleanUrl(url) {
-            if (url === null) {
-                return '';
-            } else {
-                return url.replace(/https:\/\/www.uncommongoods.com/g, "").replace(/http:\/\/blog.uncommongoods.com/g, "//blog.uncommongoods.com").replace(/é/g, "e").replace(/\s+/g,"")
-            }
-        },
-        cleanSpecialChars(st) {
-            if (st === null) {
-                return '';
-            } else {
-                return st.replace(/é/g, "&#233;").replace(/-/g, "&#8211;").replace(/—/g, "&#8212;").replace(/'/g, "&#8217;");
-            }
-        },
-        cleanTextarea(st) {
-            if (st === null) {
-                return '';
-            } else {
-                return st.replace(/\n/g, ',').split(',');
-            }
-        },
+        // cleanImagePath(image) {
+        //     if (image === null) {
+        //         return '';
+        //     } else {
+        //         image = image.replace(/https:\/\/www.uncommongoods.com/g, "").replace(/\s+/g,"").replace(/é/g, "e").trim();
+        //         if (image != '') {
+        //             return '/images/hp/B'+image;
+        //         } else {
+        //             return '';
+        //         }
+        //     }
+        // },
+        // cleanUrl(url) {
+        //     if (url === null) {
+        //         return '';
+        //     } else {
+        //         return url.replace(/https:\/\/www.uncommongoods.com/g, "").replace(/http:\/\/blog.uncommongoods.com/g, "//blog.uncommongoods.com").replace(/é/g, "e").replace(/\s+/g,"")
+        //     }
+        // },
+        // cleanSpecialChars(st) {
+        //     if (st === null) {
+        //         return '';
+        //     } else {
+        //         return st.replace(/é/g, "&#233;").replace(/-/g, "&#8211;").replace(/—/g, "&#8212;").replace(/'/g, "&#8217;");
+        //     }
+        // },
+        // cleanTextarea(st) {
+        //     if (st === null) {
+        //         return '';
+        //     } else {
+        //         return st.replace(/\n/g, ',').split(',');
+        //     }
+        // },
         jsonOrder(arry, preview) {
             var alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
             this.hpJson = {};
@@ -150,7 +156,7 @@ export default {
             });
             console.log('jsonOrder saved ',this.hpJson);
         },
-        saveClick() {
+        updateValues(e) {
             this.$children.forEach(component => {
                 var moduleType = component.$vnode.componentOptions.tag;
                 var elements = Array.from(component.$el.parentNode.childNodes);
@@ -162,6 +168,12 @@ export default {
                         position = index;
                     }
                 });
+
+                if (e === 'update') {
+                    this.mappingOrder[id] = {};
+                    this.mappingOrder[id][position] = {};
+                    this.mappingOrder[id][position][moduleType] = {};
+                }
 
                 switch (moduleType) {
                     case 'large-feature-module':
@@ -344,8 +356,8 @@ export default {
                         var smallImageList = this.cleanTextarea(component.smallImageUrl);
                         var largeImageList = this.cleanTextarea(component.largeImageUrl);
                         var imageDescriptionList = this.cleanTextarea(component.imageDescription);
+                        var displayOn = component.selectedScreenSize;
 
-                        this.mappingOrder[id][position][moduleType]['displayModuleOn'] = component.selectedScreenSize,
                         this.mappingOrder[id][position][moduleType]['sections'] = [];
                         this.mappingOrder[id][position][moduleType]['section'] = {
                             'text': this.cleanSpecialChars(component.section),
@@ -363,6 +375,7 @@ export default {
                                     this.mappingOrder[id][position][moduleType]['sections'].push(
                                         {
                                             'item': item,
+                                            'displayModuleOn': displayOn[index],
                                             'image': {
                                                 'customImage': {
                                                     'small': smallImageList[index] === undefined ? '' : this.cleanImagePath(smallImageList[index]),
@@ -383,8 +396,8 @@ export default {
                         var smallImageList = this.cleanTextarea(component.smallImageUrl);
                         var largeImageList = this.cleanTextarea(component.largeImageUrl);
                         var imageDescriptionList = this.cleanTextarea(component.imageDescription);
+                        var displayOn = component.selectedScreenSize;
 
-                        this.mappingOrder[id][position][moduleType]['displayModuleOn'] = component.selectedScreenSize,
                         this.mappingOrder[id][position][moduleType]['sections'] = [];
                         this.mappingOrder[id][position][moduleType]['section'] = {
                             'text': this.cleanSpecialChars(component.section),
@@ -402,6 +415,7 @@ export default {
                                     this.mappingOrder[id][position][moduleType]['sections'].push(
                                         {
                                             'item': item,
+                                            'displayModuleOn': displayOn[index],
                                             'image': {
                                                 'customImage': {
                                                     'small': smallImageList[index] === undefined ? '' : this.cleanImagePath(smallImageList[index]),
@@ -422,8 +436,8 @@ export default {
                         var smallImageList = this.cleanTextarea(component.smallImageUrl);
                         var largeImageList = this.cleanTextarea(component.largeImageUrl);
                         var imageDescriptionList = this.cleanTextarea(component.imageDescription);
+                        var displayOn = component.selectedScreenSize;
 
-                        this.mappingOrder[id][position][moduleType]['displayModuleOn'] = component.selectedScreenSize;
                         this.mappingOrder[id][position][moduleType]['sections'] = [];
                         this.mappingOrder[id][position][moduleType]['section'] = {
                             'text': this.cleanSpecialChars(component.section),
@@ -441,6 +455,7 @@ export default {
                                     this.mappingOrder[id][position][moduleType]['sections'].push(
                                         {
                                             'item': item,
+                                            'displayModuleOn': displayOn[index],
                                             'image': {
                                                 'customImage': {
                                                     'small': smallImageList[index] === undefined ? '' : this.cleanImagePath(smallImageList[index]),
@@ -528,7 +543,9 @@ export default {
                     break;
                 }
             });
-
+        },
+        saveClick() {
+            this.updateValues();
             var mappingOrderCopy = this.mappingOrder;
             var removedUniqueIdJson = {};
             var orderedJson = {};
@@ -569,388 +586,13 @@ export default {
                 }
             });
             duplicateObjects = duplicateObjects.filter(function(n){ return n != '' });
+
             this.jsonOrder(duplicateObjects);
         }
     },
     updated: function() {
         this.$nextTick(function () {
-            var sortableContainerEl = document.getElementById('sortableContainer').children;
-            var sortableContainerList = Array.from(sortableContainerEl);
-
-            sortableContainerList.forEach((el, position) => {
-                var moduleType = el.getAttribute('data-type');
-                var component = this.$children[position];
-
-                this.mappingOrder[el.id] = {};
-                this.mappingOrder[el.id][position] = {};
-                this.mappingOrder[el.id][position][moduleType] = {};
-
-                switch (moduleType) {
-                    case 'large-feature-module':
-                        this.mappingOrder[el.id][position][moduleType]['sections'] = [
-                            {
-                                "item": component.itemId,
-                                "displayModuleOn": component.selectedScreenSize,
-                                "image": {
-                                    "customImage": {
-                                        "small": component.smallImageUrl,
-                                        "large": component.largeImageUrl
-                                    },
-                                    "link": component.itemUrl,
-                                    "description": component.imageDescription
-                                },
-                                "headline": {
-                                    "text": component.headline,
-                                    "link": component.headlineUrl,
-                                    "description": component.headlineDescription
-                                },
-                                "cta": {
-                                    "text": component.cta,
-                                    "link": component.ctaUrl,
-                                    "description": component.ctaDescription
-                                }
-                            }
-                        ]
-                    break;
-                    case 'small-feature-module':
-                        this.mappingOrder[el.id][position][moduleType]['sections'] = [
-                            {
-                                'item': component.itemId,
-                                'displayModuleOn': component.selectedScreenSize,
-                                'section': {
-                                    'text': this.cleanSpecialChars(component.section),
-                                    'link': this.cleanUrl(component.sectionUrl),
-                                    'description': component.sectionDescription
-                                },
-                                'image': {
-                                    'customImage': {
-                                        "small": this.cleanImagePath(component.smallImageUrl),
-                                        "large": this.cleanImagePath(component.largeImageUrl)
-                                    },
-                                    'link': this.cleanUrl(component.itemUrl),
-                                    'description': component.imageDescription
-                                },
-                                'headline': {
-                                    'text': this.cleanSpecialChars(component.headline),
-                                    'link': this.cleanUrl(component.headlineUrl),
-                                    'description': component.headlineDescription
-                                },
-                                'cta': {
-                                    'text': this.cleanSpecialChars(component.cta),
-                                    'link': this.cleanUrl(component.ctaUrl),
-                                    'description': component.ctaDescription
-                                }
-                            }
-                        ]
-                    break;
-                    case 'basic-story-module':
-                        this.mappingOrder[el.id][position][moduleType]['sections'] = [
-                            {
-                                'item': component.itemId,
-                                'displayModuleOn': component.selectedScreenSize,
-                                'section': {
-                                    'text': this.cleanSpecialChars(component.section),
-                                    'link': this.cleanUrl(component.sectionUrl),
-                                    'description': component.sectionDescription
-                                },
-                                'image': {
-                                    'customImage': {
-                                        "small": this.cleanImagePath(component.smallImageUrl),
-                                        "large": this.cleanImagePath(component.largeImageUrl)
-                                    },
-                                    'link': this.cleanUrl(component.itemUrl),
-                                    'description': component.imageDescription
-                                },
-                                'headline': {
-                                    'text': this.cleanSpecialChars(component.headline),
-                                    'link': this.cleanUrl(component.headlineUrl),
-                                    'description': component.headlineDescription
-                                },
-                                'copy': {
-                                    'text': this.cleanSpecialChars(component.copy),
-                                    'link': this.cleanUrl(component.copyUrl),
-                                    'description': component.copyDescription
-                                },
-                                'cta': {
-                                    'text': this.cleanSpecialChars(component.cta),
-                                    'link': this.cleanUrl(component.ctaUrl),
-                                    'description': component.ctaDescription
-                                }
-                            }
-                        ]
-                    break;
-                    case 'extended-story-module':
-                        this.mappingOrder[el.id][position][moduleType]['sections'] = [
-                            {
-                                'item': component.itemId,
-                                'displayModuleOn': component.selectedScreenSize,
-                                'section': {
-                                    'text': this.cleanSpecialChars(component.section),
-                                    'link': this.cleanUrl(component.sectionUrl),
-                                    'description': component.sectionDescription
-                                },
-                                'image': {
-                                    'customImage': {
-                                        "small": this.cleanImagePath(component.smallImageUrl),
-                                        "large": this.cleanImagePath(component.largeImageUrl)
-                                    },
-                                    'link': this.cleanUrl(component.itemUrl),
-                                    'description': component.imageDescription
-                                },
-                                'headline': {
-                                    'text': this.cleanSpecialChars(component.headline),
-                                    'link': this.cleanUrl(component.headlineUrl),
-                                    'description': component.headlineDescription
-                                },
-                                'copy': {
-                                    'text': this.cleanSpecialChars(component.copy),
-                                    'link': this.cleanUrl(component.copyUrl),
-                                    'description': component.copyDescription
-                                },
-                                'cta': {
-                                    'text': this.cleanSpecialChars(component.cta),
-                                    'link': this.cleanUrl(component.ctaUrl),
-                                    'description': component.ctaDescription
-                                }
-                            }
-                        ]
-                    break;
-                    case 'collection-grid-module':
-                        var itemsList = this.cleanTextarea(component.itemId);
-                        var itemsUrlList = this.cleanTextarea(component.itemUrl);
-                        var smallImageList = this.cleanTextarea(component.smallImageUrl);
-                        var largeImageList = this.cleanTextarea(component.largeImageUrl);
-                        var imageDescriptionList = this.cleanTextarea(component.imageDescription);
-
-
-                        this.mappingOrder[el.id][position][moduleType]['displayModuleOn'] = component.selectedScreenSize;
-                        this.mappingOrder[el.id][position][moduleType]['sections'] = [];
-                        this.mappingOrder[el.id][position][moduleType]['section'] = {
-                            'text': this.cleanSpecialChars(component.section),
-                            'link': this.cleanUrl(component.sectionUrl),
-                            'description': component.sectionDescription
-                        }
-                        this.mappingOrder[el.id][position][moduleType]['headline'] = {
-                            'text': this.cleanSpecialChars(component.headline),
-                            'link': this.cleanUrl(component.headlineUrl),
-                            'description': component.headlineDescription
-                        }
-                        this.mappingOrder[el.id][position][moduleType]['cta'] = {
-                            'text': this.cleanSpecialChars(component.cta),
-                            'link': this.cleanUrl(component.ctaUrl),
-                            'description': component.ctaDescription
-                        }
-
-                        if (itemsList != '') {
-                            itemsList.forEach((item, index) => {
-                                if (item != '') {
-                                    this.mappingOrder[el.id][position][moduleType]['sections'].push(
-                                        {
-                                            'item': item,
-                                            'image': {
-                                                'customImage': {
-                                                    'small': smallImageList[index] === undefined ? '' : this.cleanImagePath(smallImageList[index]),
-                                                    'large': largeImageList[index] === undefined ? '' : this.cleanImagePath(largeImageList[index])
-                                                },
-                                                'link': itemsUrlList[index] === undefined ? '' : this.cleanUrl(itemsUrlList[index]),
-                                                'description': imageDescriptionList[index] === undefined ? '' : imageDescriptionList[index]
-                                            }
-                                        }
-                                    )
-                                }
-                            })
-                        }
-                    break;
-                    case 'text-link-module':
-                        var itemsList = this.cleanTextarea(component.itemId);
-                        var itemsUrlList = this.cleanTextarea(component.itemUrl);
-                        var smallImageList = this.cleanTextarea(component.smallImageUrl);
-                        var largeImageList = this.cleanTextarea(component.largeImageUrl);
-                        var imageDescriptionList = this.cleanTextarea(component.imageDescription);
-
-                        this.mappingOrder[el.id][position][moduleType]['displayModuleOn'] = component.selectedScreenSize,
-                        this.mappingOrder[el.id][position][moduleType]['sections'] = [];
-                        this.mappingOrder[el.id][position][moduleType]['section'] = {
-                            'text': this.cleanSpecialChars(component.section),
-                            'link': this.cleanUrl(component.sectionUrl),
-                            'description': component.sectionDescription
-                        }
-                        this.mappingOrder[el.id][position][moduleType]['cta'] = {
-                            'text': this.cleanSpecialChars(component.cta),
-                            'link': this.cleanUrl(component.ctaUrl),
-                            'description': component.ctaDescription
-                        }
-                        if (itemsList != '') {
-                            itemsList.forEach((item, index) => {
-                                if (item != '') {
-                                    this.mappingOrder[el.id][position][moduleType]['sections'].push(
-                                        {
-                                            'item': item,
-                                            'image': {
-                                                'customImage': {
-                                                    'small': smallImageList[index] === undefined ? '' : this.cleanImagePath(smallImageList[index]),
-                                                    'large': largeImageList[index] === undefined ? '' : this.cleanImagePath(largeImageList[index])
-                                                },
-                                                'link': itemsUrlList[index] === undefined ? '' : this.cleanUrl(itemsUrlList[index]),
-                                                'description': imageDescriptionList[index] === undefined ? '' : imageDescriptionList[index]
-                                            }
-                                        }
-                                    )
-                                }
-                            })
-                        }
-                    break;
-                    case 'image-link-double-module':
-                        var itemsList = this.cleanTextarea(component.itemId);
-                        var itemsUrlList = this.cleanTextarea(component.itemUrl);
-                        var smallImageList = this.cleanTextarea(component.smallImageUrl);
-                        var largeImageList = this.cleanTextarea(component.largeImageUrl);
-                        var imageDescriptionList = this.cleanTextarea(component.imageDescription);
-
-                        this.mappingOrder[el.id][position][moduleType]['displayModuleOn'] = component.selectedScreenSize,
-                        this.mappingOrder[el.id][position][moduleType]['sections'] = [];
-                        this.mappingOrder[el.id][position][moduleType]['section'] = {
-                            'text': this.cleanSpecialChars(component.section),
-                            'link': this.cleanUrl(component.sectionUrl),
-                            'description': component.sectionDescription
-                        }
-                        this.mappingOrder[el.id][position][moduleType]['cta'] = {
-                            'text': this.cleanSpecialChars(component.cta),
-                            'link': this.cleanUrl(component.ctaUrl),
-                            'description': component.ctaDescription
-                        }
-                        if (itemsList != '') {
-                            itemsList.forEach((item, index) => {
-                                if (item != '') {
-                                    this.mappingOrder[el.id][position][moduleType]['sections'].push(
-                                        {
-                                            'item': item,
-                                            'image': {
-                                                'customImage': {
-                                                    'small': smallImageList[index] === undefined ? '' : this.cleanImagePath(smallImageList[index]),
-                                                    'large': largeImageList[index] === undefined ? '' : this.cleanImagePath(largeImageList[index])
-                                                },
-                                                'link': itemsUrlList[index] === undefined ? '' : this.cleanUrl(itemsUrlList[index]),
-                                                'description': imageDescriptionList[index] === undefined ? '' : imageDescriptionList[index]
-                                            }
-                                        }
-                                    )
-                                }
-                            })
-                        }
-                    break;
-                    case 'button-link-double-module':
-                        var itemsList = this.cleanTextarea(component.itemId);
-                        var itemsUrlList = this.cleanTextarea(component.itemUrl);
-                        var smallImageList = this.cleanTextarea(component.smallImageUrl);
-                        var largeImageList = this.cleanTextarea(component.largeImageUrl);
-                        var imageDescriptionList = this.cleanTextarea(component.imageDescription);
-
-                        this.mappingOrder[el.id][position][moduleType]['displayModuleOn'] = component.selectedScreenSize;
-                        this.mappingOrder[el.id][position][moduleType]['sections'] = [];
-                        this.mappingOrder[el.id][position][moduleType]['section'] = {
-                            'text': this.cleanSpecialChars(component.section),
-                            'link': this.cleanUrl(component.sectionUrl),
-                            'description': component.sectionDescription
-                        }
-                        this.mappingOrder[el.id][position][moduleType]['cta'] = {
-                            'text': this.cleanSpecialChars(component.cta),
-                            'link': this.cleanUrl(component.ctaUrl),
-                            'description': component.ctaDescription
-                        }
-                        if (itemsList != '') {
-                            itemsList.forEach((item, index) => {
-                                if (item != '') {
-                                    this.mappingOrder[el.id][position][moduleType]['sections'].push(
-                                        {
-                                            'item': item,
-                                            'image': {
-                                                'customImage': {
-                                                    'small': smallImageList[index] === undefined ? '' : this.cleanImagePath(smallImageList[index]),
-                                                    'large': largeImageList[index] === undefined ? '' : this.cleanImagePath(largeImageList[index])
-                                                },
-                                                'link': itemsUrlList[index] === undefined ? '' : this.cleanUrl(itemsUrlList[index]),
-                                                'description': imageDescriptionList[index] === undefined ? '' : imageDescriptionList[index]
-                                            }
-                                        }
-                                    )
-                                }
-                            })
-                        }
-                    break;
-                    case 'seo-link-module':
-                        var seo1ctaList = this.cleanTextarea(component.seo1cta);
-                        var seo1ctaUrlList = this.cleanTextarea(component.seo1ctaUrl);
-                        var seo1ctaDescriptionList = this.cleanTextarea(component.seo1ctaDescription);
-
-                        var seo2ItemsList = this.cleanTextarea(component.itemId);
-                        var seo2ItemsUrlList = this.cleanUrl(component.itemUrl);
-                        var seo2SmallImageList = this.cleanUrl(component.smallImageUrl);
-                        var seo2LargeImageList = this.cleanUrl(component.largeImageUrl);
-                        var seo2ImageDescriptionList = this.cleanTextarea(component.imageDescription);
-                        var seo2ctaList = this.cleanTextarea(component.seo2cta);
-                        var seo2ctaUrlList = this.cleanUrl(component.seo2ctaUrl);
-                        var seo2ctaDescriptionList = this.cleanTextarea(component.seo2ctaDescription);
-
-                        this.mappingOrder[el.id][position][moduleType]['seo1'] = {}
-                        this.mappingOrder[el.id][position][moduleType]['seo1']['section'] = {
-                            'text': this.cleanSpecialChars(component.seo1Section),
-                            'link': this.cleanUrl(component.seo1SectionUrl),
-                            'description': component.seo1SectionDescription
-                        }
-                        this.mappingOrder[el.id][position][moduleType]['seo1']['sections'] = []
-
-                        if (seo1ctaList != '') {
-                            seo1ctaList.forEach((item, index) => {
-                                if (item != '') {
-                                    this.mappingOrder[el.id][position][moduleType]['seo1']['sections'].push(
-                                        {
-                                            'cta': {
-                                                'text': item,
-                                                'link': seo1ctaUrlList[index] === undefined ? '' : this.cleanUrl(seo1ctaUrlList[index]),
-                                                'description': seo1ctaDescriptionList[index] === undefined ? '' : seo1ctaDescriptionList[index]
-                                            }
-                                        }
-                                    )
-                                }
-                            })
-                        }
-
-                        this.mappingOrder[el.id][position][moduleType]['seo2'] = {}
-                        this.mappingOrder[el.id][position][moduleType]['seo2']['section'] = {
-                            'text': this.cleanSpecialChars(component.seo2Section),
-                            'link': this.cleanUrl(component.seo2SectionUrl),
-                            'description': component.seo2SectionDescription
-                        },
-                        this.mappingOrder[el.id][position][moduleType]['seo2']['sections'] = []
-
-                        if (seo2ItemsList != '') {
-                            seo2ItemsList.forEach((item, index) => {
-                                if (item != '') {
-                                    this.mappingOrder[el.id][position][moduleType]['seo2']['sections'].push(
-                                        {
-                                            'item': item,
-                                            'image': {
-                                                'customImage': {
-                                                    'small': seo2SmallImageList[index] === undefined ? '' : this.cleanImagePath(seo2SmallImageList[index]),
-                                                    'large': seo2LargeImageList[index] === undefined ? '' : this.cleanImagePath(seo2LargeImageList[index])
-                                                },
-                                                'link': seo2ItemsUrlList[index] === undefined ? '' : this.cleanUrl(seo2ItemsUrlList[index]),
-                                                'description': seo2ImageDescriptionList[index] === undefined ? '' : seo2ImageDescriptionList[index]
-                                            },
-                                            'cta': {
-                                                'text': seo2ctaList[index] === undefined ? '' : seo2ctaList[index].replace(/é/g, "&#233;").trim(),
-                                                'link': seo2ctaUrlList[index] === undefined ? '' : this.cleanUrl(seo2ctaUrlList[index]),
-                                                'description': seo2ctaDescriptionList[index] === undefined ? '' : seo2ctaDescriptionList[index]
-                                            }
-                                        }
-                                    )
-                                }
-                            })
-                        }
-                    break;
-                }
-            });
+            this.updateValues('update');
         });
     },
     components: {

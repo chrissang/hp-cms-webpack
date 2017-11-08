@@ -21,7 +21,7 @@
             </div>
 
             <div class="small-1 text-center columns removeModule">
-                <span class="icon-close icon-lg" aria-hidden="true"></span>
+                <span class="icon-close icon-lg removeEl" aria-hidden="true"></span>
             </div>
         </div>
     </li>

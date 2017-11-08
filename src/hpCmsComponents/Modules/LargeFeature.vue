@@ -18,7 +18,7 @@
                 </dl>
             </div>
             <div class="small-1 text-center columns removeModule">
-                <span class="icon-close icon-lg" aria-hidden="true"></span>
+                <span class="icon-close icon-lg removeEl" aria-hidden="true"></span>
             </div>
         </div>
     </li>
@@ -60,15 +60,15 @@ export default {
     created: function() {
         if (this.componentData != null) {
             this.itemId = this.componentData['item'];
-            this.itemUrl = this.componentData['image']['link'];
+            this.itemUrl = this.cleanUrl(this.componentData['image']['link']);
             this.smallImageUrl = this.componentData['image']['customImage']['small'];
             this.largeImageUrl = this.componentData['image']['customImage']['large'];
             this.imageDescription = this.componentData['image']['description'];
             this.headline = this.componentData['headline']['text'];
-            this.headlineUrl = this.componentData['headline']['link'];
+            this.headlineUrl = this.cleanUrl(this.componentData['headline']['link']);
             this.headlineDescription = this.componentData['headline']['description'];
             this.cta = this.componentData['cta']['text'];
-            this.ctaUrl = this.componentData['cta']['link'];
+            this.ctaUrl = this.cleanUrl(this.componentData['cta']['link']);
             this.ctaDescription = this.componentData['cta']['description'];
             this.selectedScreenSize = this.componentData['displayModuleOn'];
         }

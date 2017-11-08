@@ -1,0 +1,706 @@
+{
+    "A": {
+        "large-feature-module": {
+            "sections": [
+                {
+                    "item": 46781,
+                    "displayModuleOn": "small",
+                    "image": {
+                        "customImage": {
+                            "small": "/images/hp/B/A1_LF_20171030_800px.jpg",
+                            "large": "/images/hp/B/A1_LF_20171030_1680px.mp4"
+                        },
+                        "link": "/home-garden/home-decor?view=all",
+                        "description": "Porcelain_Personality_Vases"
+                    },
+                    "headline": {
+                        "text": "Made You Look",
+                        "link": "/home-garden/home-decor?view=all",
+                        "description": "made_you_look"
+                    },
+                    "cta": {
+                        "text": "shop home decor",
+                        "link": "/home-garden/home-decor?view=all",
+                        "description": "shop_home_decor"
+                    }
+                }
+            ]
+        }
+    },
+    "B": {
+        "seo-link-module": {
+            "seo1": {
+                "section": {
+                    "text": "Shop by Recipient",
+                    "link": "/gifts/by-recipient",
+                    "description": "by_recipient"
+                },
+                "sections": [
+                    {
+                        "cta": {
+                            "text": "for him",
+                            "link": "/for-him?view=all",
+                            "description": "him"
+                        }
+                    },
+                    {
+                        "cta": {
+                            "text": "for her",
+                            "link": "/for-her?view=all",
+                            "description": "_her"
+                        }
+                    },
+                    {
+                        "cta": {
+                            "text": "kids",
+                            "link": "/gifts/by-recipient/gifts-for-kids",
+                            "description": "_kids"
+                        }
+                    },
+                    {
+                        "cta": {
+                            "text": "teens",
+                            "link": "/gifts/by-recipient/gifts-for-teens-15-and-up",
+                            "description": "_teens"
+                        }
+                    }
+                ]
+            },
+            "seo2": {
+                "section": {
+                    "text": "Top Categories",
+                    "link": "",
+                    "description": ""
+                },
+                "sections": [
+                    {
+                        "item": 15789,
+                        "image": {
+                            "customImage": {
+                                "small": "",
+                                "large": ""
+                            },
+                            "link": "/gifts?view=all",
+                            "description": "Real_Sugar_Maple_Leaf_Night_Light"
+                        },
+                        "cta": {
+                            "text": "gifts",
+                            "link": "/gifts?view=all",
+                            "description": "gifts"
+                        }
+                    },
+                    {
+                        "item": 46815,
+                        "image": {
+                            "customImage": {
+                                "small": "",
+                                "large": ""
+                            },
+                            "link": "/this-just-in",
+                            "description": "Fall_Fringe_Scarf"
+                        },
+                        "cta": {
+                            "text": "this just in",
+                            "link": "/this-just-in",
+                            "description": "this_just_in"
+                        }
+                    },
+                    {
+                        "item": 41842,
+                        "image": {
+                            "customImage": {
+                                "small": "",
+                                "large": ""
+                            },
+                            "link": "/sets/top-rated-gifts",
+                            "description": "Larry_the_Llama_Doormat"
+                        },
+                        "cta": {
+                            "text": "top-rated gifts",
+                            "link": "/sets/top-rated-gifts",
+                            "description": "top_rated_gifts"
+                        }
+                    },
+                    {
+                        "item": 42930,
+                        "image": {
+                            "customImage": {
+                                "small": "",
+                                "large": ""
+                            },
+                            "link": "/sale",
+                            "description": "Home_Run_Beer_Pong"
+                        },
+                        "cta": {
+                            "text": "sale",
+                            "link": "/sale",
+                            "description": "sale"
+                        }
+                    },
+                    {
+                        "item": 46943,
+                        "image": {
+                            "customImage": {
+                                "small": "",
+                                "large": ""
+                            },
+                            "link": "/gifts/by-price/gifts-under-50",
+                            "description": "USA_and_State_Serving_Boards"
+                        },
+                        "cta": {
+                            "text": "$50 & under",
+                            "link": "/gifts/by-price/gifts-under-50",
+                            "description": "50_under"
+                        }
+                    },
+                    {
+                        "item": 40880,
+                        "image": {
+                            "customImage": {
+                                "small": "",
+                                "large": ""
+                            },
+                            "link": "/gifts/by-price/gifts-under-25",
+                            "description": "Color_Wheel_Pendant"
+                        },
+                        "cta": {
+                            "text": "$25 & under",
+                            "link": "/gifts/by-price/gifts-under-25",
+                            "description": "25_under"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "C": {
+        "small-feature-module": {
+            "sections": [
+                {
+                    "item": 24326,
+                    "displayModuleOn": "medium",
+                    "section": {
+                        "text": "",
+                        "link": "",
+                        "description": ""
+                    },
+                    "image": {
+                        "customImage": {
+                            "small": "",
+                            "large": ""
+                        },
+                        "link": "/home-garden/home-decor/decorative-accents",
+                        "description": "Giraffe_Family_Bookends"
+                    },
+                    "headline": {
+                        "text": "Welcome to the Jungle",
+                        "link": "/home-garden/home-decor/decorative-accents",
+                        "description": "welcome_jungle"
+                    },
+                    "cta": {
+                        "text": "shop decorative accents",
+                        "link": "/home-garden/home-decor/decorative-accents",
+                        "description": "shop_decorative_accents"
+                    }
+                },
+                {
+                    "item": 43044,
+                    "displayModuleOn": "medium",
+                    "section": {
+                        "text": "",
+                        "link": "",
+                        "description": ""
+                    },
+                    "image": {
+                        "customImage": {
+                            "small": "",
+                            "large": ""
+                        },
+                        "link": "/kitchen-bar?view=all",
+                        "description": "Serving_Palette_with_Bowls"
+                    },
+                    "headline": {
+                        "text": "Palette Pleasers",
+                        "link": "/kitchen-bar?view=all",
+                        "description": "palette_pleasers"
+                    },
+                    "cta": {
+                        "text": "shop kitchen & bar",
+                        "link": "/kitchen-bar?view=all",
+                        "description": "shop_kitchen_bar"
+                    }
+                },
+                {
+                    "item": 43428,
+                    "displayModuleOn": "medium",
+                    "section": {
+                        "text": "",
+                        "link": "",
+                        "description": ""
+                    },
+                    "image": {
+                        "customImage": {
+                            "small": "",
+                            "large": ""
+                        },
+                        "link": "/home-garden/garden?view=all",
+                        "description": "Mason_Jar_Indoor_Herb_Garden"
+                    },
+                    "headline": {
+                        "text": "Your Sunshine State",
+                        "link": "/home-garden/garden?view=all",
+                        "description": "sunshine_state"
+                    },
+                    "cta": {
+                        "text": "shop garden",
+                        "link": "/home-garden/garden?view=all",
+                        "description": "shop_garden"
+                    }
+                }
+            ]
+        }
+    },
+    "D": {
+        "extended-story-module": {
+            "sections": [
+                {
+                    "item": "",
+                    "displayModuleOn": "small",
+                    "section": {
+                        "text": "",
+                        "link": "",
+                        "description": ""
+                    },
+                    "image": {
+                        "customImage": {
+                            "small": "/images/hp/B/D1_BS_20171016_640px.gif",
+                            "large": "/images/hp/B/D1_BS_20171016_1200px.gif"
+                        },
+                        "link": "/sunny/giftfinder/intro",
+                        "description": "Sunny"
+                    },
+                    "headline": {
+                        "text": "Find a Gift They'll Love",
+                        "link": "/sunny/giftfinder/intro",
+                        "description": "Find_gift_they'll_love"
+                    },
+                    "copy": {
+                        "text": "Meet Sunny, our expert gift finder here to make your search for a unique gift easy as peanut pie.",
+                        "link": "/sunny/giftfinder/intro",
+                        "description": "shopping_with_sunny"
+                    },
+                    "cta": {
+                        "text": "start shopping with Sunny",
+                        "link": "/sunny/giftfinder/intro",
+                        "description": "shopping_with_sunny"
+                    }
+                }
+            ]
+        }
+    },
+    "E": {
+        "collection-grid-module": {
+            "displayModuleOn": "small",
+            "section": {
+                "text": "",
+                "link": "",
+                "description": ""
+            },
+            "headline": {
+                "text": "Selling Like Hotcakes",
+                "link": "/curated/brand-new-best-sellers",
+                "description": "selling_like_hotcakes"
+            },
+            "cta": {
+                "text": "shop brand-new bestsellers",
+                "link": "/curated/brand-new-best-sellers",
+                "description": "brand_new_best_sellers"
+            },
+            "sections": [
+                {
+                    "item": "47299",
+                    "image": {
+                        "customImage": {
+                            "small": "/images/hp/B/E1_CG_20171030_340px.jpg",
+                            "large": "/images/hp/B/E1_CG_20171030_640px.jpg"
+                        },
+                        "link": "/curated/brand-new-best-sellers",
+                        "description": "Manual_Three_in_One_Coffeemaker"
+                    }
+                },
+                {
+                    "item": "47172",
+                    "image": {
+                        "customImage": {
+                            "small": "/images/hp/B/E2_CG_20171030_340px.jpg",
+                            "large": "/images/hp/B/E2_CG_20171030_640px.jpg"
+                        },
+                        "link": "/curated/brand-new-best-sellers",
+                        "description": "Four_Elements_Necklaces"
+                    }
+                },
+                {
+                    "item": "47200",
+                    "image": {
+                        "customImage": {
+                            "small": "/images/hp/B/E3_CG_20171030_340px.jpg",
+                            "large": "/images/hp/B/E3_CG_20171030_640px.jpg"
+                        },
+                        "link": "/curated/brand-new-best-sellers",
+                        "description": "Elemental_Twist_Wine_Glass_Set"
+                    }
+                },
+                {
+                    "item": "47120",
+                    "image": {
+                        "customImage": {
+                            "small": "/images/hp/B/E4_CG_20171030_340px.jpg",
+                            "large": "/images/hp/B/E4_CG_20171030_640px.jpg"
+                        },
+                        "link": "/curated/brand-new-best-sellers",
+                        "description": "Olive_Lovers_Gift_Box"
+                    }
+                },
+                {
+                    "item": "47195",
+                    "image": {
+                        "customImage": {
+                            "small": "/images/hp/B/E5_CG_20171030_340px.jpg",
+                            "large": "/images/hp/B/E5_CG_20171030_640px.jpg"
+                        },
+                        "link": "/curated/brand-new-best-sellers",
+                        "description": "Bottle_Stopper_Garden_Kit"
+                    }
+                },
+                {
+                    "item": "47173",
+                    "image": {
+                        "customImage": {
+                            "small": "/images/hp/B/E6_CG_20171030_340px.jpg",
+                            "large": "/images/hp/B/E6_CG_20171030_640px.jpg"
+                        },
+                        "link": "/curated/brand-new-best-sellers",
+                        "description": "Lace_Butterfly_Earrings"
+                    }
+                }
+            ]
+        }
+    },
+    "F": {
+        "text-link-module": {
+            "section": {
+                "text": "Shop by Interest",
+                "link": "/fun/by-interest",
+                "description": "shop_by_interest"
+            },
+            "sections": [
+                {
+                    "item": 22440,
+                    "displayModuleOn": "small",
+                    "image": {
+                        "customImage": {
+                            "small": "",
+                            "large": ""
+                        },
+                        "link": "/fun/by-interest/music-gifts",
+                        "description": "Guitar_Glasses"
+                    },
+                    "cta": {
+                        "text": "music",
+                        "link": "/fun/by-interest/music-gifts",
+                        "description": "music"
+                    }
+                },
+                {
+                    "item": 43332,
+                    "displayModuleOn": "small",
+                    "image": {
+                        "customImage": {
+                            "small": "",
+                            "large": ""
+                        },
+                        "link": "/fun/by-interest/travel-gifts",
+                        "description": "Anti_Theft_Backpack"
+                    },
+                    "cta": {
+                        "text": "travel",
+                        "link": "/fun/by-interest/travel-gifts",
+                        "description": "travel"
+                    }
+                },
+                {
+                    "item": 40465,
+                    "displayModuleOn": "small",
+                    "image": {
+                        "customImage": {
+                            "small": "",
+                            "large": ""
+                        },
+                        "link": "/fun/by-interest/geek-gifts",
+                        "description": "Planet_Lollipops"
+                    },
+                    "cta": {
+                        "text": "geek",
+                        "link": "/fun/by-interest/geek-gifts",
+                        "description": "geek"
+                    }
+                },
+                {
+                    "item": 45921,
+                    "displayModuleOn": "small",
+                    "image": {
+                        "customImage": {
+                            "small": "",
+                            "large": ""
+                        },
+                        "link": "/sets/inspirational-gifts",
+                        "description": "Be_Truthful_Be_Gentle_Be_Fearless_Necklace"
+                    },
+                    "cta": {
+                        "text": "inspirational",
+                        "link": "/sets/inspirational-gifts",
+                        "description": "inspirational"
+                    }
+                },
+                {
+                    "item": 41849,
+                    "displayModuleOn": "small",
+                    "image": {
+                        "customImage": {
+                            "small": "",
+                            "large": ""
+                        },
+                        "link": "/gifts/personalized/personalized-gifts",
+                        "description": "Custom_Etched_Growler"
+                    },
+                    "cta": {
+                        "text": "custom",
+                        "link": "/gifts/personalized/personalized-gifts",
+                        "description": "custom"
+                    }
+                },
+                {
+                    "item": 44480,
+                    "displayModuleOn": "small",
+                    "image": {
+                        "customImage": {
+                            "small": "",
+                            "large": ""
+                        },
+                        "link": "/fun/pets?view=all",
+                        "description": "Pedigree_Poem_Pillow"
+                    },
+                    "cta": {
+                        "text": "pets",
+                        "link": "/fun/pets?view=all",
+                        "description": "pets"
+                    }
+                }
+            ]
+        }
+    },
+    "G": {
+        "button-link-double-module": {
+            "section": {
+                "text": "Shop by Occasion",
+                "link": "/gifts",
+                "description": "shop_by_occasion"
+            },
+            "sections": [
+                {
+                    "item": 45909,
+                    "displayModuleOn": "small",
+                    "image": {
+                        "customImage": {
+                            "small": "/images/hp/B/G1_BD_20171030_180px.jpg",
+                            "large": "/images/hp/B/G1_BD_20171030_640px.jpg"
+                        },
+                        "link": "/gifts/birthday-gifts?view=all",
+                        "description": "Make_a_Wish_Chocolate_Bars"
+                    },
+                    "cta": {
+                        "text": "birthday",
+                        "link": "/gifts/birthday-gifts?view=all",
+                        "description": "birthday"
+                    }
+                },
+                {
+                    "item": 24497,
+                    "displayModuleOn": "small",
+                    "image": {
+                        "customImage": {
+                            "small": "",
+                            "large": ""
+                        },
+                        "link": "/gifts/housewarming/housewarming-gifts",
+                        "description": "Nesting_Stoneware_Mixing_Bowl_Sets"
+                    },
+                    "cta": {
+                        "text": "housewarming",
+                        "link": "/gifts/housewarming/housewarming-gifts",
+                        "description": "housewarming"
+                    }
+                },
+                {
+                    "item": 26630,
+                    "displayModuleOn": "small",
+                    "image": {
+                        "customImage": {
+                            "small": "",
+                            "large": ""
+                        },
+                        "link": "/gifts/wedding-gifts?view=all",
+                        "description": "Thumbprint_Alternative_Guestbook"
+                    },
+                    "cta": {
+                        "text": "wedding",
+                        "link": "/gifts/wedding-gifts?view=all",
+                        "description": "wedding"
+                    }
+                },
+                {
+                    "item": 23960,
+                    "displayModuleOn": "small",
+                    "image": {
+                        "customImage": {
+                            "small": "",
+                            "large": ""
+                        },
+                        "link": "/gifts/anniversary-gifts/anniversary-gifts",
+                        "description": "Personalized_Whiskey_Barrel"
+                    },
+                    "cta": {
+                        "text": "anniversary",
+                        "link": "/gifts/anniversary-gifts/anniversary-gifts",
+                        "description": "anniversary"
+                    }
+                }
+            ]
+        }
+    },
+    "H": {
+        "extended-story-module": {
+            "sections": [
+                {
+                    "item": "",
+                    "displayModuleOn": "small",
+                    "section": {
+                        "text": "",
+                        "link": "",
+                        "description": ""
+                    },
+                    "image": {
+                        "customImage": {
+                            "small": "/images/hp/B/H1_ES_20171030_640px.jpg",
+                            "large": "/images/hp/B/H1_ES_20171030_1200px.jpg"
+                        },
+                        "link": "http://blog.uncommongoods.com/2017/uncommon-impact-paola-delgado/",
+                        "description": "Uncommon_Impact_Paola_Delgado"
+                    },
+                    "headline": {
+                        "text": "Uncommon Impact: Paola Delgado's Sustainable Jewelry",
+                        "link": "http://blog.uncommongoods.com/2017/uncommon-impact-paola-delgado/",
+                        "description": "paola_delgado"
+                    },
+                    "copy": {
+                        "text": "&#8220;It was when I was already in love with the tagua nut that I discovered the part about sustainability, and that just made me want to work with them even more.&#8221;",
+                        "link": "http://blog.uncommongoods.com/2017/uncommon-impact-paola-delgado/",
+                        "description": "read_on"
+                    },
+                    "cta": {
+                        "text": "read on",
+                        "link": "http://blog.uncommongoods.com/2017/uncommon-impact-paola-delgado/",
+                        "description": "read_on"
+                    }
+                }
+            ]
+        }
+    },
+    "I": {
+        "small-feature-module": {
+            "sections": [
+                {
+                    "item": 26556,
+                    "displayModuleOn": "small",
+                    "section": {
+                        "text": "",
+                        "link": "",
+                        "description": ""
+                    },
+                    "image": {
+                        "customImage": {
+                            "small": "",
+                            "large": ""
+                        },
+                        "link": "http://blog.uncommongoods.com/2017/gifts-teens-20-cool-gifts-people-20/",
+                        "description": "game_of_phones"
+                    },
+                    "headline": {
+                        "text": "Gift Guide: Gifts for Teens",
+                        "link": "http://blog.uncommongoods.com/2017/gifts-teens-20-cool-gifts-people-20/",
+                        "description": "gifts_for_teens"
+                    },
+                    "cta": {
+                        "text": "discover more",
+                        "link": "http://blog.uncommongoods.com/2017/gifts-teens-20-cool-gifts-people-20/",
+                        "description": "discover_more"
+                    }
+                },
+                {
+                    "item": 46845,
+                    "displayModuleOn": "small",
+                    "section": {
+                        "text": "",
+                        "link": "",
+                        "description": ""
+                    },
+                    "image": {
+                        "customImage": {
+                            "small": "/images/hp/B/I1_SF_20171023_340px.jpg",
+                            "large": "/images/hp/B/I1_SF_20171023_640px.jpg"
+                        },
+                        "link": "http://blog.uncommongoods.com/2017/new-gifts-for-holiday-2017/",
+                        "description": "Anatomy_of_a_Heart_Mugs"
+                    },
+                    "headline": {
+                        "text": "Gift Guide: New Gifts for 2017",
+                        "link": "http://blog.uncommongoods.com/2017/new-gifts-for-holiday-2017/",
+                        "description": "new_gifts_for_2017"
+                    },
+                    "cta": {
+                        "text": "discover more",
+                        "link": "http://blog.uncommongoods.com/2017/new-gifts-for-holiday-2017/",
+                        "description": "discover_more"
+                    }
+                },
+                {
+                    "item": 16016,
+                    "displayModuleOn": "small",
+                    "section": {
+                        "text": "",
+                        "link": "",
+                        "description": ""
+                    },
+                    "image": {
+                        "customImage": {
+                            "small": "",
+                            "large": ""
+                        },
+                        "link": "http://blog.uncommongoods.com/2017/man-cave-must-haves/",
+                        "description": "Deep_Sea_Sand_Art"
+                    },
+                    "headline": {
+                        "text": "Gift Guide: Man Cave Must-Haves",
+                        "link": "http://blog.uncommongoods.com/2017/man-cave-must-haves/",
+                        "description": "man_cave_must_haves"
+                    },
+                    "cta": {
+                        "text": "discover more",
+                        "link": "http://blog.uncommongoods.com/2017/man-cave-must-haves/",
+                        "description": "discover_more"
+                    }
+                }
+            ]
+        }
+    }
+}

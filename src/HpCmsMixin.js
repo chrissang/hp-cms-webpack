@@ -1,5 +1,4 @@
 export const hpCmsMixins = {
-    // props: ['componentIndex'],
     data () {
         return {
             alpha: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -10,6 +9,39 @@ export const hpCmsMixins = {
     methods: {
         generateUniqueId: function() {
             return 'uniqueId-'+Math.random().toString(36).substr(2, 9);
+        },
+        cleanImagePath(image) {
+            if (image === null) {
+                return '';
+            } else {
+                image = image.replace(/https:\/\/www.uncommongoods.com/g, "").replace(/\s+/g,"").replace(/é/g, "e").replace('/images/hp/B/', "").trim();
+                if (image != '') {
+                    return image;
+                } else {
+                    return '';
+                }
+            }
+        },
+        cleanUrl(url) {
+            if (url === null) {
+                return '';
+            } else {
+                return url.replace(/https:\/\/www.uncommongoods.com/g, "").replace(/http:\/\/blog.uncommongoods.com/g, "//blog.uncommongoods.com").replace(/é/g, "e").replace(/\s+/g,"")
+            }
+        },
+        cleanSpecialChars(st) {
+            if (st === null) {
+                return '';
+            } else {
+                return st.replace(/é/g, "&#233;").replace(/-/g, "&#8211;").replace(/—/g, "&#8212;").replace(/'/g, "&#8217;");
+            }
+        },
+        cleanTextarea(st) {
+            if (st === null) {
+                return '';
+            } else {
+                return st.replace(/\n/g, ',').split(',');
+            }
         }
     },
     mounted: function() {
@@ -25,6 +57,7 @@ export const hpCmsMixins = {
         Sortable.create(sortableContainer, {
           sort: true,
           handle: '.handle',
+          filter: ".removeEl",
           onUpdate: function (evt) {
               var liElements = evt.srcElement.querySelectorAll("li");
               var moduleOrderList = [];
@@ -61,7 +94,29 @@ export const hpCmsMixins = {
               })
               sortMappingOrder(uniqueIdOrderList);
           },
-          onRemove: function (evt) {
+          onFilter: function (evt) {
+              var item = evt.item;
+              var removeClick = evt.target;
+              if (Sortable.utils.is(removeClick, ".removeEl")) {  // Click on remove button
+                  var reordered = {};
+                  item.parentNode.removeChild(item); // remove sortable item
+                  delete self.mappingOrder[item.id];
+
+                  self.$children.forEach((vueComponent,index) => {
+                      if (vueComponent.uniqueId === item.id) {
+                            self.$children.splice(index,1);
+                      }
+                  })
+
+                  Object.keys(self.mappingOrder).forEach(function(key,index) {
+                      reordered[key] = {};
+                      reordered[key][index] = {}
+                    Object.keys(self.mappingOrder[key]).forEach(function(module) {
+                        reordered[key][index] = self.mappingOrder[key][module];
+                    })
+                  })
+                  self.mappingOrder = reordered;
+              }
           }
       });
   }

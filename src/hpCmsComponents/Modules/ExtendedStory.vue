@@ -23,7 +23,7 @@
             </div>
 
             <div class="small-1 text-center columns removeModule">
-                <span class="icon-close icon-lg" aria-hidden="true"></span>
+                <span class="icon-close icon-lg removeEl" aria-hidden="true"></span>
             </div>
         </div>
     </li>
@@ -75,22 +75,22 @@ export default {
     created: function() {
         if (this.componentData != null) {
             this.itemId = this.componentData['item'];
-            this.itemUrl = this.componentData['image']['link'];
-            this.smallImageUrl = this.componentData['image']['customImage']['small'];
-            this.largeImageUrl = this.componentData['image']['customImage']['large'];
-            this.imageDescription = this.componentData['image']['description'];
-            this.section = this.componentData['section']['text'];
-            this.sectionUrl = this.componentData['section']['link'];
-            this.sectionDescription = this.componentData['section']['description'];
-            this.headline = this.componentData['headline']['text'];
-            this.headlineUrl = this.componentData['headline']['link'];
-            this.headlineDescription = this.componentData['headline']['description'];
-            this.copy = this.componentData['copy']['text'];
-            this.copyUrl = this.componentData['copy']['link'];
-            this.copyDescription = this.componentData['copy']['description'];
-            this.cta = this.componentData['cta']['text'];
-            this.ctaUrl = this.componentData['cta']['link'];
-            this.ctaDescription = this.componentData['cta']['description'];
+            this.itemUrl = this.cleanUrl(this.componentData['image']['link']);
+            this.smallImageUrl = this.cleanImagePath(this.componentData['image']['customImage']['small']);
+            this.largeImageUrl = this.cleanImagePath(this.componentData['image']['customImage']['large']);
+            this.imageDescription = this.cleanSpecialChars(this.componentData['image']['description']);
+            this.section = this.cleanSpecialChars(this.componentData['section']['text']);
+            this.sectionUrl = this.cleanUrl(this.componentData['section']['link']);
+            this.sectionDescription = this.cleanSpecialChars(this.componentData['section']['description']);
+            this.headline = this.cleanSpecialChars(this.componentData['headline']['text']);
+            this.headlineUrl = this.cleanUrl(this.componentData['headline']['link']);
+            this.headlineDescription = this.cleanSpecialChars(this.componentData['headline']['description']);
+            this.copy = this.cleanSpecialChars(this.componentData['copy']['text']);
+            this.copyUrl = this.cleanUrl(this.componentData['copy']['link']);
+            this.copyDescription = this.cleanSpecialChars(this.componentData['copy']['description']);
+            this.cta = this.cleanSpecialChars(this.componentData['cta']['text']);
+            this.ctaUrl = this.cleanUrl(this.componentData['cta']['link']);
+            this.ctaDescription = this.cleanSpecialChars(this.componentData['cta']['description']);
             this.selectedScreenSize = this.componentData['displayModuleOn'];
         }
     }

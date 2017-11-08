@@ -7,8 +7,8 @@
                     "displayModuleOn": "large",
                     "image": {
                         "customImage": {
-                            "small": "/images/hp/B/A1_LF_20170814_800px.jpg",
-                            "large": "/images/hp/B/A1_LF_20170814_1680px.mp4"
+                            "small": "https://www.uncommongoods.com/images/hp/B/A1_LF_20170814_800px.jpg",
+                            "large": "https://www.uncommongoods.com/images/hp/B/A1_LF_20170814_1680px.mp4"
                         },
                         "link": "/this-just-in",
                         "description": "Aurora Lights description"
@@ -29,8 +29,8 @@
                     "displayModuleOn": "small",
                     "image": {
                         "customImage": {
-                            "small": "/images/items/42100/42160_3_640px.jpg",
-                            "large": "/images/hp/B/a1_20160919.jpg"
+                            "small": "https://www.uncommongoods.com/images/items/42100/42160_3_640px.jpg",
+                            "large": "https://www.uncommongoods.com/images/hp/B/a1_20160919.jpg"
                         },
                         "link": "/this-just-in",
                         "description": "City Map Cups description"
@@ -424,8 +424,8 @@
                     },
                     "image": {
                         "customImage": {
-                            "small": "/images/items/42100/42161_3_640px.jpg",
-                            "large": "/images/items/42100/42161_3_640px.jpg"
+                            "small": "https://www.uncommongoods.com/images/items/42100/42161_3_640px.jpg",
+                            "large": "https://www.uncommongoods.com/images/items/42100/42161_3_640px.jpg"
                         },
                         "link": "/product/common-edge-3d-printed-initial-necklace",
                         "description": "Necklace description"
@@ -472,8 +472,8 @@
                     "item": "21223",
                     "image": {
                         "customImage": {
-                            "small": "/images/small",
-                            "large": "/images/large"
+                            "small": "",
+                            "large": ""
                         },
                         "link": "/sets/most-wishlisted",
                         "description": "Himalayan Salt Tequila Glasses description"
@@ -550,8 +550,8 @@
                     "displayModuleOn": "small",
                     "image": {
                         "customImage": {
-                            "small": "/images/small",
-                            "large": "/images/large"
+                            "small": "",
+                            "large": ""
                         },
                         "link": "/gifts/by-recipient/gifts-for-men",
                         "description": "For Him description"
